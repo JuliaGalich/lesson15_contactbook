@@ -2,29 +2,46 @@
 
 {% block title %}Contact's Book List{% endblock %}
 
-{%  block content %}
+{% block content %}
       <!-- Left section: Contacts Table -->
         <div class="contacts-table">
             <h2 class="text-center">Contacts</h2>
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <th scope="col">Photo</th>
                         <th scope="col">Name</th>
+                        <th scope="col">Surname</th>
                         <th scope="col">Phone</th>
                         <th scope="col">Email</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {% for contact in contacts %}
                     <tr>
-                        <td>John Doe</td>
-                        <td>+123456789</td>
-                        <td>johndoe@example.com</td>
+                        <td>
+                            {% if contact.photo %}
+                            <img src = '{{ contact.photo.url }}' alt='Contact`s photo' width = '50'>
+                            {% else %}
+                            <img src='/media/icon.jpg' alt='Photo' width = '50'>
+                            {% endif %}
+                        </td>
+                        <td>{{ contact.Name }}</td>
+                        <td>{{ contact.Surname }}</td>
+                        <td>{{ contact.Phone }}</td>
+                        <td>{{ contact.Email }}</td>
                     </tr>
-                    <tr>
-                        <td>Jane Smith</td>
-                        <td>+987654321</td>
-                        <td>janesmith@example.com</td>
-                    </tr>
+                    {% endfor %}
+<!--                    <tr>-->
+<!--                        <td>John Doe</td>-->
+<!--                        <td>+123456789</td>-->
+<!--                        <td>johndoe@example.com</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Jane Smith</td>-->
+<!--                        <td>+987654321</td>-->
+<!--                        <td>janesmith@example.com</td>-->
+<!--                    </tr>-->
                     <!-- Add more rows as needed -->
                 </tbody>
             </table>
@@ -38,5 +55,6 @@
             <a href="#" class="btn btn-info">About Contact</a>
             <a href="#" class="btn btn-success">Display</a>
         </div>
-    </div>
+<!--    </div>-->
+
 {% endblock %}
