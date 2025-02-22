@@ -7,7 +7,7 @@ class Contact(models.Model):
     Surname = models.CharField(max_length=50)
     Phone = models.CharField(max_length=15)
     Email = models.EmailField()
-    object = models.Manager()
+    #object = models.Manager()
 
     def __str__(self):
         return f'{self.Name} {self.Surname}'
