@@ -8,11 +8,12 @@ def contact_list(request):
     return render(request, 'index.html', {'contacts': contacts})
 
 def addnew(request):
-    if request.merhod == 'POST':
+    if request.method == 'POST':
         form = Contacts_form(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('contact_list')
-        else:
-            form = Contacts_form()
-            return render(request, 'contact_form.html', {'form': form})
+    else:
+        form = Contacts_form()
+        return render(request, 'contact_form.html', {'form': form})
+
