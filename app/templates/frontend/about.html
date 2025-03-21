@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про контакт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .contact-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .contact-card h2 {
+            margin-bottom: 10px;
+        }
+        .contact-card p {
+            margin: 5px 0;
+        }
+        .contact-card a {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #007bff;
+        }
+        .contact-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-card">
+        <img src="{{ contact.photo.url }}" alt="Фото контакту" class="contact-photo" onerror="this.src='/media/default.jpg'">
+        <h2>Про контакт</h2>
+        <p><strong>Ім'я:</strong> Іван Іванов</p>
+        <p><strong>Email:</strong> ivan@example.com</p>
+        <p><strong>Телефон:</strong> +380 99 123 4567</p>
+        <a href="mailto:ivan@example.com">Написати</a>
+    </div>
+</body>
+</html>

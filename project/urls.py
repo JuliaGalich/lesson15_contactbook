@@ -17,9 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.contact_list, name='home'),
     path("contact_form/", views.addnew, name="contact_form"),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, documenr_root = settings.MEDIA_ROOT)
