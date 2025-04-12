@@ -24,6 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.contact_list, name='home'),
     path("contact_form/", views.addnew, name="contact_form"),
+    path("edit/<int:pk>/", views.edit_contact, name="edit_contact"),
+    path('delete/', views.delete_contact, name='delete_contact'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, documenr_root = settings.MEDIA_ROOT)
